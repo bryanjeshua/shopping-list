@@ -24,6 +24,7 @@
         align-items: center;
         text-align: center;
     }
+
 </style>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid" style="background-color: #1092ef;">
@@ -95,6 +96,7 @@
             <th>Price</th>
             <th>Description</th>
             <th>Date Added</th>
+            <th>Menu</th>
         </tr>`
         products.forEach((item) => {
             htmlString += `\n<tr>
@@ -102,6 +104,18 @@
             <td>${item.fields.price}</td>
             <td>${item.fields.description}</td>
             <td>${item.fields.date_added}</td>
+            <td>
+                <a href="/edit-product/${item.pk}">
+                    <button>
+                        Edit
+                    </button>
+                </a>                                
+                <a href="/delete/${item.pk}">
+                    <button>
+                        Delete
+                    </button>
+                </a>
+            </td>
         </tr>` 
         })
         
